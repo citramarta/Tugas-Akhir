@@ -1,0 +1,566 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Quicksand', sans-serif; /* Font lucu untuk seluruh body */
+    background-color: #f8f1e3;
+    color: #4f4f4f;
+    font-size: 15px;
+    padding-top: 40px;
+}
+
+/* Header */
+header {
+    color: rgb(139, 103, 103);
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Agar header tetap di atas konten lain */
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Pindahkan logo dan navigasi ke sisi kiri dan kanan */
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgba(82, 59, 46, 0.8); /* Transparansi agar bisa terlihat latar belakang */
+    backdrop-filter: blur(10px); /* Efek blur latar belakang */
+}
+
+/* Judul Header */
+header h1 {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Pacifico', cursive; /* Font kreatif untuk judul */
+    color: #432c25;
+}
+
+/* Navigasi */
+nav {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end; /* Agar tautan navigasi berada di sisi kanan */
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    margin: 0 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #432c25; 
+    text-decoration: underline;
+}
+
+/* Hero Section */
+#home {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero {
+    padding: 20px;
+    background-color: #f8f8f8;
+    position: relative;
+    width: 100%;
+    background: #f8f3e8;
+    text-align: center; /* Teks judul tetap di tengah */
+    background: #f8f3e8 url('background.jpg') no-repeat center center; /* Gambar latar belakang */
+    background-size: cover; /* Menyesuaikan gambar agar memenuhi area */
+    background-position: center; /* Memusatkan gambar */
+    height: 100vh; /* Menentukan tinggi elemen .hero agar gambar tampil */
+    display: flex; /* Membuat konten di dalam .hero lebih teratur */
+    align-items: center; /* Memusatkan konten secara vertikal */
+    justify-content: center; /* Memusatkan konten secara horizontal */
+    color: white; /* Mengubah warna teks agar terlihat jelas */
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 4rem; /* Ukuran teks besar */
+    color: white; /* Warna teks putih */
+    font-weight: bold; /* Teks tebal */
+    font-family: 'Pacifico', cursive; /* Font kreatif untuk judul */
+    animation: fadeInDown 1s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan teks agar lebih jelas */
+}
+
+.hero-text {
+    color: white;
+    text-align: center;
+    z-index: 10;
+    margin: 0;
+}
+
+.hero-text h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* Menu */
+.menu {
+    padding: 20px;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom per baris */
+    gap: 20px; /* Jarak antar elemen */
+    padding: 40px;
+}
+
+.menu h2 {
+    font-size: 28px;
+    font-family: 'Comic Neue', cursive; /* Font lucu untuk heading menu */
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #5b3838;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-item {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    font-size: 18px;
+    font-family: 'Quicksand', sans-serif; /* Font lembut untuk nama item menu */
+    margin: 15px 0;
+    color: #5b3838;
+}
+
+.menu-item p {
+    font-size: 15px;
+    color: #555;
+}
+
+/* Tombol "Pesan" */
+.button {
+    display: inline-block; /* Membuat tombol berbentuk kotak */
+    padding: 10px 20px;    /* Memberi ruang dalam tombol */
+    background-color: #a7816a; /* Warna latar tombol */
+    color: white;          /* Warna teks */
+    font-size: 12px;       /* Ukuran font */
+    font-weight: bold;     /* Menonjolkan teks */
+    text-align: center;    /* Teks di tengah */
+    border: none;          /* Menghilangkan border */
+    border-radius: 8px;    /* Sudut tombol melengkung */
+    text-decoration: none; /* Menghilangkan garis bawah pada teks */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efek saat dihover */
+    cursor: pointer;       /* Menambahkan pointer pada hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan */
+}
+
+/* Efek hover pada tombol "Pesan" */
+.button:hover {
+    background-color: #604a3d; /* Warna lebih gelap saat hover */
+    transform: scale(1.05);   /* Sedikit membesar saat dihover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar */
+}
+
+/* Tombol dengan warna abu-abu untuk kondisi tidak aktif (opsional) */
+.button:disabled,
+.button.disabled {
+    background-color: #cccccc; /* Warna abu-abu */
+    cursor: not-allowed; /* Mengganti kursor */
+    transform: none; /* Menghapus efek transformasi */
+    box-shadow: none; /* Menghapus bayangan */
+}
+
+/* Order Section */
+.order {
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #fff5e6; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #fffbf5;
+}
+
+.order h2 {
+    font-size: 22px;
+    font-family: 'Pacifico', cursive; /* Font kreatif untuk bagian pemesanan */
+    margin-bottom: 12px;
+    color: #5b3838; 
+}
+
+.order form label {
+    font-size: 12px;
+    color: #5b3838;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.order form input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.order form input[type="submit"] {
+    background-color: #ba8f73;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 8px;
+    cursor: pointer;
+    font-size: 14;
+    transition: background-color 0.3s ease;
+}
+
+.order form input[type="submit"]:hover {
+    background-color: #685a53; 
+}
+
+.order form input:focus {
+    outline: none;
+    border-color: #4d3b30; 
+    box-shadow: 0 0 5px rgba(116, 84, 65, 0.7);
+}
+
+/* Review Section */
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8f1e3;
+}
+
+.review-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.review-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-content h3 {
+    font-size: 18px;
+    font-family: 'Comic Neue', cursive; /* Font lucu untuk nama reviewer */
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.review-content .username {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.review-content .stars span {
+    color: #f39c12;
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.review-content .review-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Customer Reviews Title */
+.review-header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.review-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #5b3838;
+}
+
+.review-header p {
+    font-size: 16px;
+    color: #5b3838;
+}
+
+/*lokasi*/
+#lokasi-page h1 {
+    text-align: center; /* Memusatkan teks */
+    margin-bottom: 5px; /* Jarak ke konten di bawah */
+    font-size: 32px;
+    color: #333;
+    padding: 30px;
+}
+.lokasi-detail h2 {
+    font-size: 18px; /* Ukuran heading lebih kecil */
+    color: #3f2921; /* Warna lebih menarik */
+    margin-bottom: 5px; /* Jarak heading dengan teks di bawahnya */
+}
+.lokasi-content {
+    display: flex;
+    flex-direction: column; /* Kolom untuk masing-masing lokasi */
+    gap: 30px; /* Jarak antar lokasi */
+    align-items: center;
+    margin-bottom: 50px; /* Jarak antara lokasi terakhir dan footer */
+}
+.lokasi-detail p {
+    font-size: 14px; /* Ukuran teks lebih kecil */
+    margin-bottom: 8px; /* Jarak antar paragraf lebih kecil */
+    color: #777;
+}
+.lokasi-item {
+    display: flex;
+    flex-direction: row; /* Elemen dalam satu baris (peta dan teks) */
+    gap: 30px; /* Jarak antara peta dan teks */
+    align-items: center;
+    background-color: #fefefe; /* Warna latar kotak */
+    border: 1px solid #efe9e9; /* Border kotak */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+    padding: 40px;
+    width: 100%;
+    max-width: 800px; /* Lebar maksimal untuk kotak */
+}
+
+.lokasi-map iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Lebar peta */
+    height: 300px; /* Tinggi peta */
+}
+
+.lokasi-detail {
+    max-width: 300px; /* Batasi lebar teks */
+    font-family: 'Poppins', sans-serif; /* Font lebih modern */
+    color: #555;
+    line-height: 1.4; /* Jarak antar baris lebih kecil */
+}
+.lokasi-detail p:last-child {
+    margin-bottom: 0; /* Menghilangkan jarak pada paragraf terakhir */
+}
+
+/* Footer */
+footer {
+    background-color: #604a3d; /* Warna latar footer */
+    color: #ffffff; /* Warna teks */
+    padding: 20px 0px;
+    font-size: 18px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+    text-align: left; /* Teks rata kiri */
+    margin-bottom: 20px; /* Jarak bawah antara bagian "Follow Us" dan footer */
+}
+
+.footer-section p {
+    margin-bottom: 10px; /* Memberikan jarak antar paragraf */
+    line-height: 1.8; /* Mengatur tinggi baris agar teks terlihat lebih nyaman dibaca */
+    color: #d4d4d4; /* Warna teks lebih soft */
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif; /* Font lembut untuk deskripsi footer */
+    margin: 5px 0;
+}
+
+.footer-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara teks dan ikon */
+    font-size: 16px;
+    font-weight:bold;
+    font-family: 'Pacifico', cursive; /* Font unik untuk heading footer */
+    margin-bottom: 5px;
+    color: #f5dcb3;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px; /* Ukuran font link lebih kecil */
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+/* Form newsletter */
+.newsletter-input {
+    padding: 8px;
+    font-size: 12px;
+    width: 75%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.newsletter-btn {
+    background-color: #ffb6b9;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter-btn:hover {
+    background-color: #ff8c8f;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #d4d4d4;
+}
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .hero-text h2 {
+        font-size: 40px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+    }
+
+    .order {
+        width: 90%;
+    }
+
+    .order form input {
+        width: 100%;
+    }
+
+    .order h2 {
+        font-size: 24px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+/* Styling untuk textarea */
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px; /* Menambahkan ukuran font agar teks mudah dibaca */
+    resize: vertical; /* Memberi kemampuan resize pada tinggi textarea */
+}
+
+/* Styling untuk button */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efek hover pada button */
+button:hover {
+    background-color: #0056b3;
+}
