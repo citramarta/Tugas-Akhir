@@ -10,7 +10,7 @@
     <header>
         <nav>
             <a href="index.php">Home</a>
-            <a href="menu.php">Menu</a>
+            <a href="index.php#menu">Menu</a>
             <a href="review.php">Review</a>
             <a href="https://wa.me/62895383330084" target="_blank">Kontak</a>
             <a href="lokasi.php" class="active">Lokasi</a>
